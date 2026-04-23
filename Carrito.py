@@ -6,10 +6,10 @@ lista_precios = []
 lista_stock = []
 lista_categorias = []
 
-# Variables del cliente actul
+# Variables del cliente actual
 cliente_actual_id = None
 
-# Lista del carrrito del cliente (temporales para cada sesión)
+# Lista del carrito del cliente (temporales para cada sesión)
 carrito_cliente = []
 precios_carrito = []
 
@@ -25,10 +25,10 @@ def inicializar_carrito(id_cliente):
 
 def mostrar_catalogo_completo():
     """
-    Muestr el catalogo completo con stock restante.
+    Muestra el catalogo completo con stock restante.
     """
     if len(lista_productos) == 0:
-        print("No hay producs en el catalogo")
+        print("No hay productos en el catalogo")
         return
         
     print("\nCATALOGO COMPLETO")
@@ -75,7 +75,7 @@ def menu_carrito():
             
 def agregar_producto_carrito():
     """
-    Función para agregar productos al carrito del liente
+    Función para agregar productos al carrito del cliente
     """
     while True:
         print("\n" + "="*50)
@@ -142,7 +142,7 @@ def agregar_producto_carrito():
             
 def ver_carrito_y_total():
     """
-    Muestra el carrito completo con totales finaless.
+    Muestra el carrito completo con los totales finales.
     """
     print("\n" + "="*60)
     print("MI CARRITO")
