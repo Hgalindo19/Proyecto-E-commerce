@@ -36,10 +36,8 @@ def menu_admin():
         
         print("------------------------------------------")
         print("            MENU ADMINISTRADOR            ")
-        print("------------------------------------------")
-        print()
-        print(" 1 --> Gestión de Inventario")
-        print(" 2 --> Salir")
+        print("------------------------------------------\n")
+        print("1 --> Gestión de Inventario\n2 --> Salir")
         
         opcion= leer_entero("Selecione una opción: ")
         
@@ -64,13 +62,8 @@ def menu_cliente():
         
         print("------------------------------------------")
         print("               MENU CLIENTE               ")
-        print("------------------------------------------")
-        print()
-        print(" 1 --> Catálogo Completo")
-        print(" 2 --> Búsqueda por Categoria")
-        print(" 3 --> Agregar Producto al Carrito")
-        print(" 4 --> Ver Carrito y Total")
-        print(" 5 --> Salir")
+        print("------------------------------------------\n")
+        print("1 --> Catálogo Completo\n2 --> Búsqueda por Categoria\n3 --> Agregar Producto al Carrito\n4 --> Ver Carrito y Total\n5 --> Salir")
         
         opcion= leer_entero("Seleccione una opción: ")
         
@@ -104,11 +97,8 @@ def main():
           
         print("------------------------------------------")
         print("           E-COMMERCE BETA 1.O            ")
-        print("------------------------------------------")
-        print()
-        print(" 1 --> Ingresar como Administrador")
-        print(" 2 --> Ingresar como Cliente")
-        print(" 3 --> Salir")
+        print("------------------------------------------\n")
+        print("1 --> Ingresar como Administrador\n2 --> Ingresar como Cliente\n3 --> Salir")
         
         opcion= leer_entero("Seleccione una opción: ")
         
