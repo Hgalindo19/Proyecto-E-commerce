@@ -10,7 +10,7 @@ def mostrar_productos():
     for i in range(3):
         print(productos[i], categorias[i], precios[i])
         
-# Funció buscar categoría
+# Función buscar categoría
 
 def buscar_categoria():
     
