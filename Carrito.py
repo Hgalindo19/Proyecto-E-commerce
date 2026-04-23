@@ -138,3 +138,85 @@ def agregar_producto_carrito():
         except ValueError:
             print("Debes ingresar un numero valido o 'SALIR'!")
             input("Presiona Enter para continuar...")
+            
+            
+def ver_carrito_y_total():
+    """
+    Muestra el carrito completo con totales finaless.
+    """
+    print("\n" + "="*60)
+    print("MI CARRITO")
+    print("="*60)
+    
+    if len(carrito_cliente) == 0:
+        print("Tu carrito esta vacio")
+        input("Presiona Enter para continuar...")
+        return 0
+    
+    subtotal = 0
+    impuestos = 0
+    for precio in precios_carrito:
+        subtotal = subtotal + precio
+        impuestos = impuestos + (precio * 0.21)
+    total_final = subtotal + impuestos
+    
+    i = 0
+    while i < len(carrito_cliente):
+        print(str(i+1) + ". " + carrito_cliente[i] + " $" + str(precios_carrito[i]))
+        i = i + 1
+    
+    print("-" * 60)
+    print("SUBTOTAL      $" + str(subtotal))
+    print("IVA (21%)     $" + str(impuestos))
+    print("TOTAL A PAGAR $" + str(total_final))
+    print("="*60)
+    input("Presiona Enter para continuar...")
+    return total_final
+
+def mostrar_ticket_final():
+    """
+    Genera un ticket prolijo para la salida con ID de cliente.
+    """
+    if len(carrito_cliente) == 0:
+        print("No hay productos para generar ticket")
+        input("Presiona Enter para continuar...")
+        return
+    
+    total = ver_carrito_y_total()
+    
+    print("\n" + " "*70)
+    print("TICKET DE COMPRA FINAL")
+    print(" "*70)
+    
+    fecha = "XX/XX/20XX"
+    print("Fecha: " + fecha)
+    print("Cliente: ID " + str(cliente_actual_id))
+    print("-"*70)
+    
+    i = 0
+    while i < len(carrito_cliente):
+        print(carrito_cliente[i].upper() + " $" + str(precios_carrito[i]))
+        i = i + 1
+    
+    print("-"*70)
+    print("TOTAL $" + str(total))
+    print("\n" + " "*70)
+    print("GRACIAS POR SU COMPRA")
+    print(" "*70)
+    
+    carrito_cliente.clear()
+    precios_carrito.clear()
+    print("Carrito vaciado correctamente")
+    input("Presiona Enter para continuar...")
+
+# Ejemplo de uso (para probar que funcione todo): 
+if __name__ == "__main__":
+    lista_productos = ["Objeto 1", "Objeto 2", "Objeto 3", "Objeto 4"]
+    lista_precios = [150.5, 80.0, 200.0, 120.0]
+    lista_stock = [10, 5, 3, 8]
+    lista_categorias = ["Categoria 1", "Categoria 2", "Categoria 3", "Categoria 4"]
+    
+    inicializar_carrito(123)
+    menu_carrito()
+    
+    
