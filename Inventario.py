@@ -1,11 +1,14 @@
-"""Objetivo: Crear el Inventario
-    Parametro: listas para la creacion del inventario
-    Salida: Inventario hecho"""
+
 lista_producto=[]
 lista_precios=[]
 lista_stock=[]
 lista_categoria=[]
+
 def alta_producto():
+    """Objetivo: Crear el Inventario
+    Parametro: listas para la creacion del inventario
+    Salida: Inventario hecho"""
+   
     print("Agrege un nuevo producto")
     nombre=input ("Nombre del producto: ")
     categoria= input ("Catergoria: ")
@@ -32,29 +35,31 @@ def alta_producto():
     lista_stock.append(stock)
     lista_categoria.append(categoria)
                 
-"""""Objetivo: Actualizar Precios de forma masiva 
+def actualizar_precios():
+    """""Objetivo: Actualizar Precios de forma masiva 
     Parametro: sin parametro
     Salido: Precios Actualizados"""
-def actualizar_precios():
+   
     print("Actualizacion de Precios")
 
-while True:
-    try:
-        porcentaje = float(input("Ingrese cuanto quiere aumentar: "))
-        confirmar= input("¿Aplicar? {porcentaje}% a todos los precios (s/n): ").lower()
-        if confirmar == "s":
-            for i in range(len(lista_precios)):
-                nuevo_precio= lista_precios[i+ porcentaje/100]
-                lista_precios[i]= int(nuevo_precio)
-            print("Precios Actualizados")
-            break
-        else:
-            print("Operacion Cancelada")
-    except ValueError:
-        print("Ingrese un numero valido.")
-        """""Objetivo: busqueda de productos con bajo stock
-            Parametro: sin parametro
-            Salida: busqueda de producto critico"""
+    while True:
+        try:
+            porcentaje = float(input("Ingrese cuanto quiere aumentar: "))
+            confirmar= input("¿Aplicar? {porcentaje}% a todos los precios (s/n): ").lower()
+            if confirmar == "s":
+                for i in range(len(lista_precios)):
+                    nuevo_precio= lista_precios[i+ porcentaje/100]
+                    lista_precios[i]= int(nuevo_precio)
+                print("Precios Actualizados")
+                break
+            else:
+                print("Operacion Cancelada")
+        except ValueError:
+            print("Ingrese un numero valido.")
+            
+"""""Objetivo: busqueda de productos con bajo stock
+    Parametro: sin parametro
+    Salida: busqueda de producto critico"""
 def producto_critico():
     print("-"*50)
     print("Productos critico (Bajo)")

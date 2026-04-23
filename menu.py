@@ -1,5 +1,8 @@
 import os
 
+import Inventario
+import Carrito
+
 def limpiar_pantalla():
     '''Objetivo: limpiar la terminal 
        Parametros: ninguno
@@ -43,12 +46,51 @@ def menu_admin():
         
         if opcion == 1:
             print("gestion inventario")
+            gestionar_inventario()
             
         elif opcion == 2:
             continuar=False
         
         else:
             print("Opción Invalida")
+
+def gestionar_inventario():
+    '''Objetivo: mostrar el menu de gestion de inventario
+       Parametros: ninguno
+       Salida: menu de gestion de inventario
+    '''
+    print("1 --> Catálogo Completo\n2 --> Búsqueda por Categoria\n3 --> Alta de Producto\n4 --> Lista de Productos Criticos\n5 --> Actualización Productos Masiva\n6 --> Almacen\n7 --> Salir")
+        
+    opcion= leer_entero("Seleccione una opción: ")
+        
+    if opcion == 1:
+        print("catalogo")
+        Carrito.mostrar_catalogo_completo()
+        
+    elif opcion == 2:
+        print("busqueda")
+        
+            
+    elif opcion == 3:
+        print("alta producto")
+        Inventario.alta_producto()
+            
+    elif opcion == 4:
+        print("lista productos criticos")
+        Inventario.producto_critico()
+        
+    elif opcion == 5:
+        print("actualizacion")
+        Inventario.actualizar_precios()
+        
+    elif opcion == 6:
+        print("almacen")
+        
+    elif opcion == 7:
+        continuar= False
+            
+    else:
+        print("Opción Invalida")
             
 def menu_cliente():
     '''Objetivo: mostrar el menu del usuario
@@ -56,6 +98,7 @@ def menu_cliente():
        Salida: menu del usuario
     '''
     continuar= True
+    carrito=[]
     
     while continuar:
         limpiar_pantalla()
@@ -63,23 +106,23 @@ def menu_cliente():
         print("------------------------------------------")
         print("               MENU CLIENTE               ")
         print("------------------------------------------\n")
-        print("1 --> Catálogo Completo\n2 --> Búsqueda por Categoria\n3 --> Agregar Producto al Carrito\n4 --> Ver Carrito y Total\n5 --> Salir")
+        print("1 --> Catálogo Completo\n2 --> Búsqueda por Categoria\n3 --> Carrito\n4 --> Salir")
         
         opcion= leer_entero("Seleccione una opción: ")
         
         if opcion == 1:
             print("catalogo")
+            Carrito.mostrar_catalogo_completo()
         
         elif opcion == 2:
             print("busqueda")
             
-        elif opcion == 3:
-            print("agregar carrito")
             
+        elif opcion == 3:
+            print("carrito")
+            Carrito.menu_carrito()
+                   
         elif opcion == 4:
-            print("Ver carrito")
-        
-        elif opcion == 5:
             continuar= False
             
         else:
@@ -114,5 +157,6 @@ def main():
         
         else:
             print("Opción Invalida")
-        
-main()
+            
+if __name__ == "__main__":
+    main()
