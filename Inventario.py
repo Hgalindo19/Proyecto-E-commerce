@@ -41,7 +41,7 @@ def actualizar_precios():
 while True:
     try:
         porcentaje = float(input("Ingrese cuanto quiere aumentar: "))
-        confirmar= input("¿Aplicar? {porcentaje}% a todos los precios (s/n): ").lower()
+        confirmar= input(f"¿Aplicar? {porcentaje}% a todos los precios (s/n): ").lower()
         if confirmar == "s":
             for i in range(len(lista_precios)):
                 nuevo_precio= lista_precios[i+ porcentaje/100]
